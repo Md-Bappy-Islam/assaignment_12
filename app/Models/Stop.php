@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Stop extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'bus_id',
+        'trip_id',
+        'seat_id',
+        'user_id',
+        'date',
+        'time'
+    ];
 }

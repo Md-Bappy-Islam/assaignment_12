@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('stops', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('line_id')->constrained()->onDelete('cascade');
+            $table->string('time');
+            $table->string('date');
+            $table->foreignId('bus_id')->constrained();
+            $table->foreignId('trip_id')->constrained();
+            $table->foreignId('seat_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamp("created_at")->useCurrent();
             $table->timestamp("updated_at")->useCurrent()->useCurrentOnUpdate();
         });
